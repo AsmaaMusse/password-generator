@@ -13,12 +13,28 @@ function generatePassword() {
   const passwordLength = 10;
 
   //Declare variables for each DOM element
-  const length = document.getElementById("length");
-  const isLowerCase = document.getElementById("lowerCase");
-  const isUpperCase = document.getElementById("upperCase");
-  const isNumbers = document.getElementById("numbers");
-  const isSpecials = document.getElementById("specials");
+  const passwordOptions = {};
+  const length = determineLength();
+  const isLowerCase = determineLowerCase();
+  const isUpperCase = determineUpperCase();
+  const isNumbers = determineNumbers();
+  const isSpecials = determineSpecials();
 }
+function determineLowerCase() {
+  lowerCaseCheck = confirm;
+  ("Do you want to include Lowercase Characters? (y/n)");
+}
+
+function determineUpperCase() {
+  upperCaseCheck = confirm;
+  ("Do you want to include Uppercase Characters? (y/n)");
+}
+
+function determineNumbers() {
+  numberCheck;
+}
+
+// Run Validation
 
 // Write password to the #password input
 function writePassword() {
