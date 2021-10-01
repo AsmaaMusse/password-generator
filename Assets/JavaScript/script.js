@@ -1,119 +1,127 @@
 // Assignment Code
 var generateBtn = document.querySelector("#generate");
 
-//Declare the constant variable
-const password = '';
-const lowercase = 'abcdefghijklmnopqrstuvwxyxz';
-const uppercase = 'ABCDEFGHIJKLMNOPQRSTUVWXYZ';
-const numbers = '0123456789';
-const specials = '!@#$%^&*()?/;:~';
+function generatePassword() {
 
-const characters = lowercase + uppercase + numbers + specials;
-const charactersLength = characters.length;
+ //Declare the constant variable
+ const password = '';
+ const lowercase = 'abcdefghijklmnopqrstuvwxyxz';
+ const uppercase = 'ABCDEFGHIJKLMNOPQRSTUVWXYZ';
+ const numbers = '0123456789';
+ const specials = '!@#$%^&*()?/;:~';
+
+ const characters = lowercase + uppercase + numbers + specials;
+ const charactersLength = characters.length;
 
 
-//Declare variables for each DOM element
-const passwordOptions = {};
-const isLength = determineLength();
-const isLowerCase = determineLowerCase();
-const isUpperCase = determineUpperCase();
-const isNumbers = determineNumbers();
-const isSpecials = determineSpecials();
+ //Declare variables for each DOM element
+ const passwordOptions = {};
+ const isLength = determineLength();
+ const isLowerCase = determineLowerCase();
+ const isUpperCase = determineUpperCase();
+ const isNumbers = determineNumbers();
+ const isSpecials = determineSpecials();
 
-// Creating function to determine password length
-function determineLength() {
-  length = prompt (
+ // Creating function to determine password length
+  function determineLength() {
+   length = prompt (
     'Choose a password length between 8 and 20 characters'
-  );
+   );
 
-  if (password <8 && >20 ) {
-    alert (
+    if (password <8 && >20 ) {
+      alert (
       'Please insert a number between 8 to 128'
       );
-    return;
-  };
-}
+      return;
+    };
+  } 
 
-//Functions to determine what user wants to include
-function determineLowerCase() {
-  lowercase = confirm (
+ //Functions to determine what user wants to include
+  function determineLowerCase() {
+   lowercase = confirm (
     "Do you want to include a Lowercase Characters? (y/n)"
-  );
+   );
 
-  if (isLowerCase === "y") {
-    isLowerCase = true;
-  } else if (isLowerCase === "n") {
-    isLowerCase = false;
-  } else (isLowerCase === null); {
-    return ('Please choose y/n as a valid answer')
+    if (isLowerCase === "y") {
+      isLowerCase = true;
+     } else if (isLowerCase === "n") {
+     isLowerCase = false;
+     } else (isLowerCase === null); {
+     return ('Please choose y/n as a valid answer')
+    }
   }
-}
 
-function determineUpperCase() {
-  uppercase = confirm (
+  function determineUpperCase() {
+   uppercase = confirm (
     "Do you want to include a Uppercase Characters? (y/n)"
-  );
+   );
 
-  if (isUpperCase === "y") {
-    isUpperCase = true;
-  } else if (isUpperCase === "n") {
-    isUpperCase = false;
-  } else (isUpperCase === null); {
-    return ('Please choose y/n as a valid answer')
+    if (isUpperCase === "y") {
+     isUpperCase = true;
+    } else if (isUpperCase === "n") {
+     isUpperCase = false;
+    } else (isUpperCase === null); {
+      return ('Please choose y/n as a valid answer')
+    }
   }
-}
 
-function determineNumbers() {
-  number = confirm (
+  function determineNumbers() {
+    number = confirm (
     "Do you want to include a Number? (y/n)"
-  );
+    );
 
-  if (isNumbers === "y") {
-    isNumbers = true;
-  } else if (isNumbers === "n") {
-    isNumbers = false;
-  } else (isNumbers === null); {
-    return ('Please choose y/n as a valid answer')
+    if (isNumbers === "y") {
+     isNumbers = true;
+    } else if (isNumbers === "n") {
+     isNumbers = false;
+    } else (isNumbers === null); {
+      return ('Please choose y/n as a valid answer')
+    }
   }
-}
 
-function determineSpecials() {
-  specials = confirm (
+  function determineSpecials() {
+    specials = confirm (
     "Do you want to include a Special character? (y/n)"
-  );
+    );
 
-  if (isSpecials === "y") {
-    isSpecials = true;
-  } else if (isSpecials === "n") {
-    isSpecials = false;
-  } else (isSpecials === null); {
-    return ('Please choose y/n as a valid answer')
+    if (isSpecials === "y") {
+     isSpecials = true;
+     } else if (isSpecials === "n") {
+     isSpecials = false;
+     } else (isSpecials === null); {
+     return ('Please choose y/n as a valid answer')
+    }
   }
-}
 
-// Run Validation
+  // Run Validation
 
-if (lowercase && uppercase && numbers && specials === 'y') {
+ if (lowercase && uppercase && numbers && specials === 'y') {
    characters = lowercase + uppercase + numbers + specials
 
-} else if (lowercase && numbers && specials === 'y') {
-  characters = lowercase + numbers + specials
+  } else if (lowercase && numbers && specials === 'y') {
+   characters = lowercase + numbers + specials
 
-} else if (uppercase && numbers && specials ) {
-  
-} else {
-  
-} {
-  
-} {
-  
-}
+  } else if (uppercase && numbers && specials === 'y') {
+   characters = uppercase + numbers + specials
 
-// Return value
+  } else if(lowercase && uppercase && specials === 'y') {
+   characters = lowercase + uppercase + specials
 
-//Declare a function 'generatePassword'
-function generatePassword() {
-  for (var i = 0; i < length; i++) {
+  } else if(lowercase && uppercase && numbers === 'y') {
+    characters = lowercase + upper + numbers
+
+  } else if(numbers && specials === 'y') {
+    characters = numbers + specials
+    
+  }  else {
+    alert ('Please choose at least 2 of the 4 options');
+  }
+
+  // Return value
+
+ //Declare a function 'generatePassword'
+  function generatePassword() {
+   for (var i = 0; i < length; i++) {
     password += characters.charAt(Math.floor(Math.random() * charactersLength));
 
     return password;
