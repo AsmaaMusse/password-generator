@@ -38,13 +38,14 @@ function generatePassword() {
  const isSpecials = true;
 
   // Run Validation
-
- if (!isLowerCase && isUpperCase && isNumbers && !isSpecials) {
+  if (!isLowerCase && isUpperCase && isNumbers && !isSpecials) {
     alert ('Please choose at least 2 of the 4 options');
     return; 
   }
 
-  // Return value
+  // Return value 
+  const choices = ['']
+        choices = [[lowercase], [uppercase], [numbers], [specials]];
 
  //Declare a function 'generatePassword'
   function generatePassword() {
