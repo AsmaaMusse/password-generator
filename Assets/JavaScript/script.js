@@ -1,41 +1,42 @@
 // Assignment Code
 var generateBtn = document.querySelector("#generate");
 
-//Declare a function 'generatePassword'
-function generatePassword() {
-  //Declare the constant variable arrays
-  const lowercase = ['a', 'b', 'c', 'd', 'e', 'f', 'g', 'h', 'i', 'j', 'k', 'l', 'm', 'n', 'o', 'p', 'q', 'r', 's', 't', 'u', 'v', 'w', 'x', 'y', 'z'];
-  const uppercase = ['A', 'B', 'C', 'D', 'E', 'F', 'G', 'H', 'I', 'J', 'K', 'L', 'M', 'N', 'O', 'P', 'Q', 'R', 'S', 'T', 'U', 'V', 'W', 'X', 'Y', 'Z'];
-  const numbers = ['0', '1', '2','3', '4', '5', '6', '7', '8', '9'];
-  const specials = ["+", "-", "&&", "||", "!", "(", ")", "{", "}", "[", "]", "^","~", "*", "?", ":","\"","\\"];
+//Declare the constant variable
+const password = '';
+const lowercase = 'abcdefghijklmnopqrstuvwxyxz';
+const uppercase = 'ABCDEFGHIJKLMNOPQRSTUVWXYZ';
+const numbers = '0123456789';
+const specials = '!@#$%^&*()?/;:~';
 
-  //Declare variables for each DOM element
-  const passwordOptions = {};
-  const isLength = determineLength();
-  const isLowerCase = determineLowerCase();
-  const isUpperCase = determineUpperCase();
-  const isNumbers = determineNumbers();
-  const isSpecials = determineSpecials();
-}
-s
-//create const for password length
+const characters = lowercase + uppercase + numbers + specials;
+const charactersLength = characters.length;
+
+
+//Declare variables for each DOM element
+const passwordOptions = {};
+const isLength = determineLength();
+const isLowerCase = determineLowerCase();
+const isUpperCase = determineUpperCase();
+const isNumbers = determineNumbers();
+const isSpecials = determineSpecials();
+
+// Creating function to determine password length
 function determineLength() {
   length = prompt (
     'Choose a password length between 8 and 20 characters'
   );
 
-  if (passwordOptions >= 8 || <= 20) {
-   isLength true; 
-   } else (password <=8 || >=20) {
-   isLength false; 
-   }return ('Please choose a number between 8 and 20' )
-   }
-  }
+  if (password <8 && >20 ) {
+    alert (
+      'Please insert a number between 8 to 128'
+      );
+    return;
+  };
 }
 
 //Functions to determine what user wants to include
 function determineLowerCase() {
-  lowerCase = confirm (
+  lowercase = confirm (
     "Do you want to include a Lowercase Characters? (y/n)"
   );
 
@@ -49,7 +50,7 @@ function determineLowerCase() {
 }
 
 function determineUpperCase() {
-  upperCase = confirm (
+  uppercase = confirm (
     "Do you want to include a Uppercase Characters? (y/n)"
   );
 
@@ -67,41 +68,57 @@ function determineNumbers() {
     "Do you want to include a Number? (y/n)"
   );
 
-  if (isNumber === "y") {
-    isNumber = true;
-  } else if (isNumber === "n") {
-    isNumber = false;
-  } else (isNumber === null); {
+  if (isNumbers === "y") {
+    isNumbers = true;
+  } else if (isNumbers === "n") {
+    isNumbers = false;
+  } else (isNumbers === null); {
     return ('Please choose y/n as a valid answer')
   }
 }
 
 function determineSpecials() {
-  special = confirm (
+  specials = confirm (
     "Do you want to include a Special character? (y/n)"
   );
 
-  if (isSpecial === "y") {
-    isSpecial = true;
-  } else if (isSpecial === "n") {
-    isSpecial = false;
-  } else (isSpecial === null); {
+  if (isSpecials === "y") {
+    isSpecials = true;
+  } else if (isSpecials === "n") {
+    isSpecials = false;
+  } else (isSpecials === null); {
     return ('Please choose y/n as a valid answer')
   }
 }
 
 // Run Validation
 
+if (lowercase && uppercase && numbers && specials === 'y') {
+   characters = lowercase + uppercase + numbers + specials
 
-//   //return value
-//   var retVal = "";
-//   for (var i = 0; i < length; i++) {
-//     //picks a character within charSet at index of random number
-//     retVal += charSet.charAt(Math.floor(Math.random() * charSet.length));
-//   }
-//   // return retVal;
-// }
-// alert(generatePassword());
+} else if (lowercase && numbers && specials === 'y') {
+  characters = lowercase + numbers + specials
+
+} else if (uppercase && numbers && specials ) {
+  
+} else {
+  
+} {
+  
+} {
+  
+}
+
+// Return value
+
+//Declare a function 'generatePassword'
+function generatePassword() {
+  for (var i = 0; i < length; i++) {
+    password += characters.charAt(Math.floor(Math.random() * charactersLength));
+
+    return password;
+  }
+}   
 
 
 // Write password to the #password input
