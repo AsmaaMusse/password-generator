@@ -4,11 +4,11 @@ var generateBtn = document.querySelector("#generate");
 function generatePassword() {
 
  //Declare the constant variable
- const password = '';
  const lowercase = 'abcdefghijklmnopqrstuvwxyxz';
  const uppercase = 'ABCDEFGHIJKLMNOPQRSTUVWXYZ';
  const numbers = '0123456789';
  const specials = '!@#$%^&*()?/;:~';
+ const characters ='abcdefghijklmnopqrstuvwxyxzABCDEFGHIJKLMNOPQRSTUVWXYZ0123456789!@#$%^&*()?/;:~'
 
  const characters = lowercase + uppercase + numbers + specials;
  const charactersLength = characters.length;
@@ -112,7 +112,7 @@ function generatePassword() {
 
   } else if(numbers && specials === 'y') {
     characters = numbers + specials
-    
+
   }  else {
     alert ('Please choose at least 2 of the 4 options');
   }
@@ -138,4 +138,4 @@ function writePassword() {
 }
 
 // Add event listener to generate button
-generateBtn.addEventListener("click", writePassword) ;
+generateBtn.addEventListener("click", writePassword);
