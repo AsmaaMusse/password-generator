@@ -8,10 +8,10 @@ function generatePassword() {
  const uppercase = 'ABCDEFGHIJKLMNOPQRSTUVWXYZ';
  const numbers = '0123456789';
  const specials = '!@#$%^&*()?/;:~';
- const characters ='abcdefghijklmnopqrstuvwxyxzABCDEFGHIJKLMNOPQRSTUVWXYZ0123456789!@#$%^&*()?/;:~'
+ const characters ='abcdefghijklmnopqrstuvwxyxzABCDEFGHIJKLMNOPQRSTUVWXYZ0123456789!@#$%^&*()?/;:~';
 
  //Determine password length
- const characters = 10
+ const characters = 10;
  const characters = lowercase + uppercase + numbers + specials;
  const charactersLength = characters.length;
 
@@ -26,33 +26,22 @@ function generatePassword() {
 
 
  //Functions to determine what user wants to include
- const isLowerCase = confirm
- const isUpperCase = confirm
- const isNumbers = confirm 
- const isSpecials = confirm
+ const isLowerCase = confirm ('Do you want to add a lowercase?');
+ const isUpperCase = confirm ('Do you want to add a uppercase?');
+ const isNumbers = confirm ('Do you want to add a number?');
+ const isSpecials = confirm ('Do you want to add a special character?');
+
+
+ const isLowerCase = true;
+ const isUpperCase = true;
+ const isNumbers = true;
+ const isSpecials = true;
 
   // Run Validation
 
- if (lowercase && uppercase && numbers && specials === 'y') {
-   characters = lowercase + uppercase + numbers + specials
-
-  } else if (lowercase && numbers && specials === 'y') {
-   characters = lowercase + numbers + specials
-
-  } else if (uppercase && numbers && specials === 'y') {
-   characters = uppercase + numbers + specials
-
-  } else if(lowercase && uppercase && specials === 'y') {
-   characters = lowercase + uppercase + specials
-
-  } else if(lowercase && uppercase && numbers === 'y') {
-    characters = lowercase + upper + numbers
-
-  } else if(numbers && specials === 'y') {
-    characters = numbers + specials
-
-  }  else {
+ if (!isLowerCase && isUpperCase && isNumbers && !isSpecials) {
     alert ('Please choose at least 2 of the 4 options');
+    return; 
   }
 
   // Return value
