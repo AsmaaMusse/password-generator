@@ -3,92 +3,95 @@ var generateBtn = document.querySelector("#generate");
 
 //Declare a function 'generatePassword'
 function generatePassword() {
-  //Declare the constant variables
-  const lowerCase = "abcdefghijklmnopqrstuvwxyz";
-  const upperCase = "ABCDEFGHIJKLMNOPQRSTUVWXYZ";
-  const numbers = "0123456789";
-  const specials = "!#$%&'()*+,-./:;<=>?@[]^_`{|}~";
+  //Declare the constant variable arrays
+  const lowercase = ['a', 'b', 'c', 'd', 'e', 'f', 'g', 'h', 'i', 'j', 'k', 'l', 'm', 'n', 'o', 'p', 'q', 'r', 's', 't', 'u', 'v', 'w', 'x', 'y', 'z'];
+  const uppercase = ['A', 'B', 'C', 'D', 'E', 'F', 'G', 'H', 'I', 'J', 'K', 'L', 'M', 'N', 'O', 'P', 'Q', 'R', 'S', 'T', 'U', 'V', 'W', 'X', 'Y', 'Z'];
+  const numbers = ['0', '1', '2','3', '4', '5', '6', '7', '8', '9'];
+  const specials = ["+", "-", "&&", "||", "!", "(", ")", "{", "}", "[", "]", "^","~", "*", "?", ":","\"","\\"];
 
   //Declare variables for each DOM element
   const passwordOptions = {};
-  const length = determineLength();
+  const isLength = determineLength();
   const isLowerCase = determineLowerCase();
   const isUpperCase = determineUpperCase();
   const isNumbers = determineNumbers();
   const isSpecials = determineSpecials();
 }
-
+s
 //create const for password length
 function determineLength() {
   length = prompt (
     'Choose a password length between 8 and 20 characters'
-  )
+  );
 
-  if (password >= 8 || <= 20) {
-   return true; 
+  if (passwordOptions >= 8 || <= 20) {
+   isLength true; 
    } else (password <=8 || >=20) {
-   return false;
+   isLength false; 
+   }return ('Please choose a number between 8 and 20' )
+   }
   }
 }
 
 //Functions to determine what user wants to include
 function determineLowerCase() {
-  lowerCaseCheck = confirm (
+  lowerCase = confirm (
     "Do you want to include a Lowercase Characters? (y/n)"
   );
 
-  if (lowerCaseCheck === "y") {
-    lowerCaseCheck = true;
-  } else if (lowerCaseCheck === "n") {
-    lowerCaseCheck = false;
-  } else (lowerCaseCheck === null); {
+  if (isLowerCase === "y") {
+    isLowerCase = true;
+  } else if (isLowerCase === "n") {
+    isLowerCase = false;
+  } else (isLowerCase === null); {
     return ('Please choose y/n as a valid answer')
   }
 }
 
 function determineUpperCase() {
-  upperCaseCheck = confirm (
+  upperCase = confirm (
     "Do you want to include a Uppercase Characters? (y/n)"
   );
 
-  if (upperCaseCheck === "y") {
-    upperCaseCheck = true;
-  } else if (upperCaseCheck === "n") {
-    upperCaseCheck = false;
-  } else (upperCaseCheck === null); {
+  if (isUpperCase === "y") {
+    isUpperCase = true;
+  } else if (isUpperCase === "n") {
+    isUpperCase = false;
+  } else (isUpperCase === null); {
     return ('Please choose y/n as a valid answer')
   }
 }
 
 function determineNumbers() {
-  numberCheck = confirm (
+  number = confirm (
     "Do you want to include a Number? (y/n)"
   );
 
-  if (numberCheck === "y") {
-    numberCheck = true;
-  } else if (upperCaseCheck === "n") {
-    numberCheck = false;
-  } else (numberCheck === null); {
+  if (isNumber === "y") {
+    isNumber = true;
+  } else if (isNumber === "n") {
+    isNumber = false;
+  } else (isNumber === null); {
     return ('Please choose y/n as a valid answer')
   }
 }
 
 function determineSpecials() {
-  specialCheck = confirm (
+  special = confirm (
     "Do you want to include a Special character? (y/n)"
   );
 
-  if (specialCheck === "y") {
-    specialCheck = true;
-  } else if (specialCheck === "n") {
-    specialCheck = false;
-  } else (specialCheck === null); {
+  if (isSpecial === "y") {
+    isSpecial = true;
+  } else if (isSpecial === "n") {
+    isSpecial = false;
+  } else (isSpecial === null); {
     return ('Please choose y/n as a valid answer')
   }
 }
 
 // Run Validation
+
 
 //   //return value
 //   var retVal = "";
