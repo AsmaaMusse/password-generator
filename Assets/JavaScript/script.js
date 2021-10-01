@@ -9,9 +9,6 @@ function generatePassword() {
   const numbers = "0123456789";
   const specials = "!#$%&'()*+,-./:;<=>?@[]^_`{|}~";
 
-  //create const for password length
-  const passwordLength = 10;
-
   //Declare variables for each DOM element
   const passwordOptions = {};
   const length = determineLength();
@@ -21,12 +18,17 @@ function generatePassword() {
   const isSpecials = determineSpecials();
 }
 
+//create const for password length
 function determineLength() {
-  length = prompt
-  
-  if (length = 10) {
-    length = 10
-  } else  ...  
+  length = prompt (
+    'Choose a password length between 8 and 20 characters'
+  )
+
+  if (password >= 8 || <= 20) {
+   return true; 
+   } else (password <=8 || >=20) {
+   return false;
+  }
 }
 
 //Functions to determine what user wants to include
@@ -41,6 +43,7 @@ function determineLowerCase() {
     lowerCaseCheck = false;
   } else (lowerCaseCheck === null); {
     return ('Please choose y/n as a valid answer')
+  }
 }
 
 function determineUpperCase() {
@@ -54,6 +57,7 @@ function determineUpperCase() {
     upperCaseCheck = false;
   } else (upperCaseCheck === null); {
     return ('Please choose y/n as a valid answer')
+  }
 }
 
 function determineNumbers() {
@@ -67,6 +71,7 @@ function determineNumbers() {
     numberCheck = false;
   } else (numberCheck === null); {
     return ('Please choose y/n as a valid answer')
+  }
 }
 
 function determineSpecials() {
@@ -80,6 +85,7 @@ function determineSpecials() {
     specialCheck = false;
   } else (specialCheck === null); {
     return ('Please choose y/n as a valid answer')
+  }
 }
 
 // Run Validation
@@ -104,4 +110,4 @@ function writePassword() {
 }
 
 // Add event listener to generate button
-generateBtn.addEventListener("click", writePassword); 
+generateBtn.addEventListener("click", writePassword) ;
