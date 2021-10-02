@@ -28,7 +28,7 @@ function generatePassword() {
   isNumbers = true;
   isSpecials = true;
 
-  if (!isLowerCase && !isUpperCase && !isNumeric && !isSpecials) {
+  if (!isLowerCase && !isUpperCase && !isNumbers && !isSpecials) {
     alert();
     return;
   }
@@ -42,19 +42,28 @@ function generatePassword() {
   if (isUpperCase) {
     choices.push(uppercase);
   }
-  if (isNumeric) {
-    choices.push(numeric);
+  if (isNumbers) {
+    choices.push(numbers);
   }
   if (isSpecials) {
     choices.push(specials);
   }
 
   //Declare random password
-  let 
+  let password = "";
+
   for (let i = 0; i < length; i++) {
-    randomNumber = Math.floor(Math.random() * characters.length);
-    password += characters.substring(randomNumber, randomNumber + 1);
+    // Random choice index
+    const randomChoiceIndex = Math.floor(Math.random() * choices.length);
+
+    //Random Characters
+    const randomCharacters = choices[randomChoiceIndex];
+
+    password += randomCharacters.charAt(
+      Math.floor(Math.random() * randomCharacters.length)
+    );
   }
+  return password;
 }
 
 // Write password to the #password input
