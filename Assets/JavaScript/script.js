@@ -24,7 +24,7 @@ function generatePassword() {
   const isSpecials = confirm("Do you want to add a special character?");
 
   if (!isLowerCase && !isUpperCase && !isNumbers && !isSpecials) {
-    alert();
+    alert("please choose at least one option");
     return;
   }
 
@@ -44,23 +44,28 @@ function generatePassword() {
     choices.push(specials);
   }
 
-  //   const randomChoiceIndex = Math.floor(Math.random() * choices.length);
+  //   const character = lowercase || uppercase || numbers || specials;
 
-  //   //Random Characters
-  //   const randomCharacters = choices[randomChoiceIndex];
+  //   //Declare random password
+  //   let password = "";
 
-  //   password += randomCharacters.charAt(
-  //     Math.floor(Math.random() * randomCharacters.length)
-  //   );
+  //   for (let i = 1; i <= passwordLength; i++) {
+  //     password += character.charAt(
+  //       Math.floor(Math.random() * character.length + 1)
+  //     );
+  //   }
+  //   return password;
+  // }
 
-  const character = lowercase || uppercase || numbers || specials;
-
-  //Declare random password
   let password = "";
-
-  for (let i = 1; i <= passwordLength; i++) {
-    password += character.charAt(
-      Math.floor(Math.random() * character.length + 1)
+  // generate random password
+  for (let i = 0; i < 10; i++) {
+    // get random choice index
+    const randomChoiceIndex = Math.floor(Math.random() * choices.length);
+    // get random characters
+    const randomCharacters = choices[randomChoiceIndex];
+    password += randomCharacters.charAt(
+      Math.floor(Math.random() * randomCharacters.length)
     );
   }
   return password;
