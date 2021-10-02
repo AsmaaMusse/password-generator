@@ -44,19 +44,6 @@ function generatePassword() {
     choices.push(specials);
   }
 
-  //   const character = lowercase || uppercase || numbers || specials;
-
-  //   //Declare random password
-  //   let password = "";
-
-  //   for (let i = 1; i <= passwordLength; i++) {
-  //     password += character.charAt(
-  //       Math.floor(Math.random() * character.length + 1)
-  //     );
-  //   }
-  //   return password;
-  // }
-
   let password = "";
   // generate random password
   for (let i = 0; i < 10; i++) {
