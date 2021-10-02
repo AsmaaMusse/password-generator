@@ -9,12 +9,12 @@ function generatePassword() {
   const specials = "!@#$%^&*()?/;:~";
 
   //Determine password length
-  const passwordLength = Number(prompt("Enter password length:"));
+  const passwordLength = Number(prompt("Enter password length (8-128):"));
 
-  if (passwordLength >= 8 && passwordLength <= 128) {
+  if (passwordLength < 8 || passwordLength > 128) {
     alert("Please choose a different length?");
-  } else {
-    return "";
+    return passwordLength;
+  } else if (passwordLength >= 8 || passwordLength <= 128) {
   }
 
   //Functions to determine what user wants to include
@@ -22,11 +22,6 @@ function generatePassword() {
   const isUpperCase = confirm("Do you want to add a uppercase?");
   const isNumbers = confirm("Do you want to add a number?");
   const isSpecials = confirm("Do you want to add a special character?");
-
-  isLowerCase = true;
-  isUpperCase = true;
-  isNumbers = true;
-  isSpecials = true;
 
   if (!isLowerCase && !isUpperCase && !isNumbers && !isSpecials) {
     alert();
@@ -49,18 +44,23 @@ function generatePassword() {
     choices.push(specials);
   }
 
+  //   const randomChoiceIndex = Math.floor(Math.random() * choices.length);
+
+  //   //Random Characters
+  //   const randomCharacters = choices[randomChoiceIndex];
+
+  //   password += randomCharacters.charAt(
+  //     Math.floor(Math.random() * randomCharacters.length)
+  //   );
+
+  const character = lowercase || uppercase || numbers || specials;
+
   //Declare random password
   let password = "";
 
-  for (let i = 0; i < length; i++) {
-    // Random choice index
-    const randomChoiceIndex = Math.floor(Math.random() * choices.length);
-
-    //Random Characters
-    const randomCharacters = choices[randomChoiceIndex];
-
-    password += randomCharacters.charAt(
-      Math.floor(Math.random() * randomCharacters.length)
+  for (let i = 1; i <= passwordLength; i++) {
+    password += character.charAt(
+      Math.floor(Math.random() * character.length + 1)
     );
   }
   return password;
