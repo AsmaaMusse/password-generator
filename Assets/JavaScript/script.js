@@ -46,7 +46,7 @@ function generatePassword() {
 
   let password = "";
   // generate random password
-  for (let i = 0; i < 10; i++) {
+  for (let i = 0; i < passwordLength; i++) {
     // get random choice index
     const randomChoiceIndex = Math.floor(Math.random() * choices.length);
     // get random characters
