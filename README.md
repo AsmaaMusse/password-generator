@@ -21,7 +21,7 @@ GitHub page:https://github.com/AsmaaMusse/password-generator
 
 ## Screenshots:
 
-JS Code:
+JS Code
 ![code-screenshot.png](./Assets\images\screenshots\code-screenshot.png)
 
 ![website-screenshot.jpg](./Assets\images\screenshots\website-screenshot.jpg)
