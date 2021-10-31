@@ -14,7 +14,7 @@ function generatePassword() {
   if (passwordLength < 8 || passwordLength > 128) {
     alert("Please choose a different length?");
     return passwordLength;
-  } else if (passwordLength >= 8 || passwordLength <= 128) {
+  } else (passwordLength >= 8 || passwordLength <= 128) {
   }
 
   //Functions to determine what user wants to include
