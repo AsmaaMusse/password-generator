@@ -1,4 +1,4 @@
-# JavaScript Password Generator
+# JavaScript Password Generator ![MIT](https://img.shields.io/static/v1?label=MIT&message=License&color=orange)
 
 ## Overview
 
@@ -25,3 +25,7 @@ JS Code:
 ![code-screenshot.png](./Assets/images/screenshots/code-screenshot.png)
 
 ![website-screenshot.jpg](./Assets/images/screenshots/website-screenshot.jpg)
+
+### Contribute
+
+To contribute or ask questions, please <a href="https://mail.google.com/mail/u/0/?tf=cm&to=asmaamusse03@gmail.com&cc&bcc&su&body&fs=1">Email</a> here
