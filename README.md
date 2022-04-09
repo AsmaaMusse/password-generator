@@ -4,6 +4,13 @@
 
 For this project my aim was to modify a starter code given to me which enables employees to generate random passwords based on the criteria that they had selected.
 
+## Table of contents:
+- [Links](#links)
+- [Technologies Used](#technologies-used)
+- [Screenshots](#screenshots)
+- [Contribute](#contribute)
+
+## Links:
 Deployed Link: https://asmaamusse.github.io/password-generator/
 
 GitHub page:https://github.com/AsmaaMusse/password-generator
@@ -16,8 +23,9 @@ GitHub page:https://github.com/AsmaaMusse/password-generator
 - I ensured that the generated password matches the criteria selected by the user.
 
 ### Technologies used:
-
--JavaScript
+- HTML
+- CSS
+- JavaScript
 
 ## Screenshots:
 
